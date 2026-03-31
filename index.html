@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fridge Hero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <div class="main-card">
+      <h1 class="app-title">Fridge Hero</h1>
+      <p class="subtitle">Turn random fridge ingredients into a magical recipe.</p>
+
+      <div id="ingredientsList" class="inputs-stack">
+        <div class="field ingredient-row">
+          <label for="ingredient-1">Ingredient 1</label>
+          <div class="ingredient-row__inner">
+            <input type="text" id="ingredient-1" class="js-ingredient" placeholder="e.g. chicken" autocomplete="off" />
+            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+              ×
+            </button>
+          </div>
+        </div>
+        <div class="field ingredient-row">
+          <label for="ingredient-2">Ingredient 2</label>
+          <div class="ingredient-row__inner">
+            <input type="text" id="ingredient-2" class="js-ingredient" placeholder="e.g. garlic" autocomplete="off" />
+            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+              ×
+            </button>
+          </div>
+        </div>
+        <div class="field ingredient-row field-full">
+          <label for="ingredient-3">Ingredient 3</label>
+          <div class="ingredient-row__inner">
+            <input type="text" id="ingredient-3" class="js-ingredient" placeholder="e.g. tomatoes" autocomplete="off" />
+            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+              ×
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="addIngredientBtn" class="btn-add-ingredient">+ Add another ingredient</button>
+
+      <div class="button-row">
+        <button type="button" id="cookButton">
+          <span id="buttonText">Cook Magic</span>
+        </button>
+      </div>
+
+      <div id="status" class="status" role="status"></div>
+    </div>
+
+    <div class="result-area">
+      <div id="resultError" class="result-error" role="alert"></div>
+      <article id="recipeCard" class="recipe-card" aria-live="polite">
+        <header class="recipe-card__head">
+          <span class="recipe-card__icon" aria-hidden="true">🍽️</span>
+          <span class="recipe-card__label">Your recipe</span>
+        </header>
+        <div id="recipeMarkdown" class="recipe-markdown recipe-card__body"></div>
+      </article>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
