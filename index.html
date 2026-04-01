@@ -12,45 +12,147 @@
 <body>
   <div class="app-container">
     <div class="main-card">
-      <h1 class="app-title">Fridge Hero</h1>
-      <p class="subtitle">Turn random fridge ingredients into a magical recipe.</p>
-
-      <div id="ingredientsList" class="inputs-stack">
-        <div class="field ingredient-row">
-          <label for="ingredient-1">Ingredient 1</label>
-          <div class="ingredient-row__inner">
-            <input type="text" id="ingredient-1" class="js-ingredient" placeholder="e.g. chicken" autocomplete="off" />
-            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
-              ×
-            </button>
-          </div>
-        </div>
-        <div class="field ingredient-row">
-          <label for="ingredient-2">Ingredient 2</label>
-          <div class="ingredient-row__inner">
-            <input type="text" id="ingredient-2" class="js-ingredient" placeholder="e.g. garlic" autocomplete="off" />
-            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
-              ×
-            </button>
-          </div>
-        </div>
-        <div class="field ingredient-row field-full">
-          <label for="ingredient-3">Ingredient 3</label>
-          <div class="ingredient-row__inner">
-            <input type="text" id="ingredient-3" class="js-ingredient" placeholder="e.g. tomatoes" autocomplete="off" />
-            <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
-              ×
-            </button>
-          </div>
-        </div>
+      <div class="form-layout__hero">
+        <h1 class="app-title">Fridge Hero</h1>
+        <p class="subtitle">Turn random fridge ingredients into a magical recipe.</p>
       </div>
 
-      <button type="button" id="addIngredientBtn" class="btn-add-ingredient">+ Add another ingredient</button>
+      <div class="form-layout">
+        <aside class="form-layout__aside" aria-label="Cuisine preferences">
+          <div class="field field--cuisine">
+            <label for="cuisineSelect">Regional cuisine (India)</label>
+            <select id="cuisineSelect" class="select-cuisine">
+              <option value="">No preference — chef’s choice</option>
+              <optgroup label="Kerala">
+                <option value="Kerala — Malabar coastal">Malabar coastal (Kerala)</option>
+                <option value="Kerala — Syrian Christian">Syrian Christian (Kerala)</option>
+                <option value="Kerala — Sadya / vegetarian feast">Sadya / vegetarian feast (Kerala)</option>
+                <option value="Kerala — Travancore home-style">Travancore home-style (Kerala)</option>
+              </optgroup>
+              <optgroup label="Tamil Nadu">
+                <option value="Tamil Nadu — Chettinad">Chettinad (Tamil Nadu)</option>
+                <option value="Tamil Nadu — Kongunadu">Kongunadu (Tamil Nadu)</option>
+                <option value="Tamil Nadu — Chennai home-style">Chennai home-style (Tamil Nadu)</option>
+                <option value="Tamil Nadu — Madurai street-style">Madurai street-style (Tamil Nadu)</option>
+              </optgroup>
+              <optgroup label="Karnataka">
+                <option value="Karnataka — Mangalorean">Mangalorean (Karnataka)</option>
+                <option value="Karnataka — Udupi vegetarian">Udupi vegetarian (Karnataka)</option>
+                <option value="Karnataka — Mysore / Mysuru">Mysore / Mysuru (Karnataka)</option>
+                <option value="Karnataka — North Karnataka (Jolada rotti belt)">North Karnataka (Karnataka)</option>
+              </optgroup>
+              <optgroup label="Andhra Pradesh">
+                <option value="Andhra Pradesh — Coastal Andhra">Coastal Andhra (Andhra Pradesh)</option>
+                <option value="Andhra Pradesh — Rayalaseema">Rayalaseema (Andhra Pradesh)</option>
+                <option value="Andhra Pradesh — Guntur spicy">Guntur spicy (Andhra Pradesh)</option>
+              </optgroup>
+              <optgroup label="Telangana">
+                <option value="Telangana — Hyderabadi / Nizami">Hyderabadi / Nizami (Telangana)</option>
+                <option value="Telangana — Telangana rustic home-style">Telangana rustic (Telangana)</option>
+              </optgroup>
+              <optgroup label="Maharashtra">
+                <option value="Maharashtra — Pune / Desh">Pune / Desh (Maharashtra)</option>
+                <option value="Maharashtra — Mumbai street / coastal">Mumbai street / coastal (Maharashtra)</option>
+                <option value="Maharashtra — Malvani (Konkan)">Malvani — Konkan (Maharashtra)</option>
+                <option value="Maharashtra — Varhadi / Vidarbha">Varhadi / Vidarbha (Maharashtra)</option>
+              </optgroup>
+              <optgroup label="Goa">
+                <option value="Goa — Goan Catholic">Goan Catholic (Goa)</option>
+                <option value="Goa — Goan Hindu">Goan Hindu (Goa)</option>
+              </optgroup>
+              <optgroup label="Gujarat">
+                <option value="Gujarat — Gujarati thali">Gujarati thali (Gujarat)</option>
+                <option value="Kathiawadi — Saurashtra">Kathiawadi / Saurashtra (Gujarat)</option>
+                <option value="Gujarat — Kutchi">Kutchi (Gujarat)</option>
+              </optgroup>
+              <optgroup label="Rajasthan">
+                <option value="Rajasthan — Marwari">Marwari (Rajasthan)</option>
+                <option value="Rajasthan — Mewari / Udaipur">Mewari / Udaipur (Rajasthan)</option>
+                <option value="Rajasthan — Jodhpuri / desert">Jodhpuri / desert (Rajasthan)</option>
+              </optgroup>
+              <optgroup label="Punjab &amp; Haryana">
+                <option value="Punjab — Punjabi dhaba-style">Punjabi dhaba-style (Punjab)</option>
+                <option value="Punjab — Amritsari">Amritsari (Punjab)</option>
+                <option value="Haryana — Haryanvi rural">Haryanvi rural (Haryana)</option>
+              </optgroup>
+              <optgroup label="Uttar Pradesh">
+                <option value="Uttar Pradesh — Awadhi / Lucknow">Awadhi / Lucknow (Uttar Pradesh)</option>
+                <option value="Uttar Pradesh — Banaras / Eastern UP">Banaras / Eastern UP (Uttar Pradesh)</option>
+                <option value="Uttar Pradesh — Western UP home-style">Western UP home-style (Uttar Pradesh)</option>
+              </optgroup>
+              <optgroup label="Bihar &amp; Jharkhand">
+                <option value="Bihar — Bihari / Litti heartland">Bihari / Litti heartland (Bihar)</option>
+                <option value="Bihar — Bhojpuri">Bhojpuri (Bihar)</option>
+                <option value="Jharkhand — Tribal / Jharkhandi">Tribal / Jharkhandi (Jharkhand)</option>
+              </optgroup>
+              <optgroup label="West Bengal">
+                <option value="West Bengal — Bengali home-style">Bengali home-style (West Bengal)</option>
+                <option value="West Bengal — Kolkata street / Anglo-Indian">Kolkata street / Anglo-Indian (West Bengal)</option>
+              </optgroup>
+              <optgroup label="Odisha">
+                <option value="Odisha — Odia temple / Mahaprasad style">Odia temple style (Odisha)</option>
+                <option value="Odisha — Coastal Odia">Coastal Odia (Odisha)</option>
+              </optgroup>
+              <optgroup label="North East">
+                <option value="Assam — Assamese">Assamese (Assam)</option>
+                <option value="Manipur — Manipuri">Manipuri (Manipur)</option>
+                <option value="Nagaland — Naga (smoky / fermented notes)">Naga — smoky / fermented (Nagaland)</option>
+                <option value="Meghalaya — Khasi / Garo hills">Khasi / Garo hills (Meghalaya)</option>
+              </optgroup>
+              <optgroup label="Himachal &amp; Kashmir">
+                <option value="Himachal Pradesh — Pahadi / Dham">Pahadi / Dham (Himachal Pradesh)</option>
+                <option value="Jammu &amp; Kashmir — Kashmiri Wazwan-inspired">Kashmiri Wazwan-inspired (J&amp;K)</option>
+                <option value="Ladakh — Ladakhi / Tibetan-influenced">Ladakhi / Tibetan-influenced (Ladakh)</option>
+              </optgroup>
+              <optgroup label="Madhya Pradesh &amp; Chhattisgarh">
+                <option value="Madhya Pradesh — Malwa (Indore / Bhopal)">Malwa — Indore / Bhopal (MP)</option>
+                <option value="Madhya Pradesh — Bundelkhand">Bundelkhand (MP)</option>
+                <option value="Chhattisgarh — Chhattisgarhi tribal">Chhattisgarhi tribal (Chhattisgarh)</option>
+              </optgroup>
+            </select>
+            <p class="field-hint">Shapes spices, techniques, and naming to match the region.</p>
+          </div>
+        </aside>
 
-      <div class="button-row">
-        <button type="button" id="cookButton">
-          <span id="buttonText">Cook Magic</span>
-        </button>
+        <div class="form-layout__main">
+          <div id="ingredientsList" class="inputs-stack">
+            <div class="field ingredient-row">
+              <label for="ingredient-1">Ingredient 1</label>
+              <div class="ingredient-row__inner">
+                <input type="text" id="ingredient-1" class="js-ingredient" placeholder="e.g. chicken" autocomplete="off" />
+                <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+                  ×
+                </button>
+              </div>
+            </div>
+            <div class="field ingredient-row">
+              <label for="ingredient-2">Ingredient 2</label>
+              <div class="ingredient-row__inner">
+                <input type="text" id="ingredient-2" class="js-ingredient" placeholder="e.g. garlic" autocomplete="off" />
+                <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+                  ×
+                </button>
+              </div>
+            </div>
+            <div class="field ingredient-row field-full">
+              <label for="ingredient-3">Ingredient 3</label>
+              <div class="ingredient-row__inner">
+                <input type="text" id="ingredient-3" class="js-ingredient" placeholder="e.g. tomatoes" autocomplete="off" />
+                <button type="button" class="btn-remove-ingredient" aria-label="Remove ingredient" disabled>
+                  ×
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="addIngredientBtn" class="btn-add-ingredient">+ Add another ingredient</button>
+
+          <div class="button-row">
+            <button type="button" id="cookButton">
+              <span id="buttonText">Cook Magic</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <div id="status" class="status" role="status"></div>
@@ -63,7 +165,39 @@
           <span class="recipe-card__icon" aria-hidden="true">🍽️</span>
           <span class="recipe-card__label">Your recipe</span>
         </header>
+
+        <div id="recipeVisuals" class="recipe-visuals" hidden>
+          <section class="recipe-visuals__block" aria-labelledby="visual-dish-title">
+            <h3 id="visual-dish-title" class="recipe-visuals__title">Main dish</h3>
+            <p class="recipe-visuals__hint">One picture to suggest how the finished dish might look.</p>
+            <figure class="recipe-visuals__figure recipe-visuals__figure--hero">
+              <img id="dishImage" alt="" width="960" height="540" loading="lazy" decoding="async" />
+            </figure>
+          </section>
+          <p class="recipe-visuals__disclaimer">
+            AI image first; if that fails we use Openverse, TheMealDB, or Lorem Flickr — demo only. See links
+            below for the file URL and source page.
+          </p>
+        </div>
+
         <div id="recipeMarkdown" class="recipe-markdown recipe-card__body"></div>
+
+        <section id="imageSourcesSection" class="image-sources" hidden aria-labelledby="image-sources-heading">
+          <h4 id="image-sources-heading" class="image-sources__title">Main dish image — links</h4>
+          <p class="image-sources__intro">
+            Direct link to the image file and, when available, the attribution or source page where it was
+            collected from.
+          </p>
+          <ul id="imageSourcesList" class="image-sources__list"></ul>
+        </section>
+
+        <section id="youtubeSection" class="youtube-suggest" hidden aria-labelledby="youtube-heading">
+          <h4 id="youtube-heading" class="image-sources__title">Suggested YouTube channel</h4>
+          <p class="youtube-suggest__text">
+            <a id="youtubeChannelLink" class="youtube-suggest__link" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+          <p class="youtube-suggest__note">Channel picked to match this style of cooking when possible — verify in your browser.</p>
+        </section>
       </article>
     </div>
   </div>
