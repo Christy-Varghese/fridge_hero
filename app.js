@@ -1,5 +1,5 @@
 /** Paste your Gemini API key from https://aistudio.google.com/apikey (do not commit real keys). */
-const GEMINI_API_KEY = "AIzaSyAZSCDJFbx2yzR_pjuLgtFAo5AK-K_3CiA";
+const GEMINI_API_KEY = "Gemini_API_Key";
 
 const IMAGE_PROMPT_DELIMITER = "###IMAGE_PROMPTS_JSON###";
 
